@@ -9,7 +9,16 @@ I selected k_p, k_i and k_d manually.
 
 I first started with a small value for k_p and set k_d and k_i to zero. The car could make the first turn, but it crashed soon.
 
-Increasing k_p caused more oscillations, so I had to increase k_d which smoothed it out. The value of k_d depends on the rate at which telemetry comes in (which depends on CPU) and the vehicle speed. I tried several combinations of 
+Increasing k_p caused more oscillations, so I had to increase k_d which smoothed it out. 
+
+The derivative of cte (d_cte) depends on the rate at which telemetry comes in (which depends on CPU) and the vehicle speed. I tried several ways to control the telemetry rate, but in the end used a constant rate as d_cte = cte - cte_previous
+
+To get decent performance, I slowed down the car if it were ever +/- 1 m off track ( fabs(cte) > 1.0 ).
+
+Once I got around the track at slow speeds I tried to increase the speed. I could get around at a max of throttle = 0.5, beyond that the car would run off. I think a faster CPU would greatly help.
+
+Here is a video example of one of my runs - [https://youtu.be/0wJGr0AcGlk](https://youtu.be/0wJGr0AcGlk)
+
 
 ---
 

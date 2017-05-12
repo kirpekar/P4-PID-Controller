@@ -30,7 +30,6 @@ double cte_int = 0.0;
 double steer_value = 0.0;
 double coeff_p = -0.0875;
 double coeff_i = -0.0015;
-//double coeff_d = -0.375;
 double coeff_d = -0.165;
 int kk = 0;
 
